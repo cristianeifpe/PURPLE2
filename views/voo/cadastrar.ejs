@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Voo</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p style="font-size: 25px">Cadastrar Voo</p>
+
+        <form action= "/voo" method="post">
+
+            <input type="hidden" name="id" value="<%= voo.id %>">
+
+            <div <%= escondido %> class="mb-3">
+                <label class="form-label">Código</label>
+                <input required type="text" value="<%= voo.numero %>" required class="form-control" name="numero">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Avião</label>
+                <input type="text" value="<%= voo.aviao %>" required class="form-control" name="aviao">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Saída</label>
+                <input type="text" value="<%= voo.saida %>" required class="form-control" name="saida">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Data de Decolagem</label>
+                <input type="date" value="<%= voo.datasaida %>" required class="form-control" name="datasaida">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Hora de Decolagem</label>
+                <input type="text" value="<%= voo.horasaida %>" required class="form-control" name="horasaida">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Destino</label>
+                <input type="text" value="<%= voo.destino %>" required class="form-control" name="destino">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Data do Pouso</label>
+                <input type="date" value="<%= voo.datapouso %>" required class="form-control" name="datapouso">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Hora do Pouso</label>
+                <input type="text" value="<%= voo.horapouso %>" required class="form-control" name="horapouso">
+            </div>
+
+            <button type="submit" class="btn btn-purple">Salvar</button>
+            <a class="btn btn-purple" href="/">Voltar</a>
+
+        </form>
+
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+
+</html>

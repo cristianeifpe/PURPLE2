@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voo</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p style="font-size: 25px">Detalhes</p>
+
+        <div> <b> Número: </b> <%= resultado.numero %> </div>
+        <div> <b> Avião: </b> <%= resultado.aviao %> </div>
+        <div> <b> Saída: </b> <%= resultado.saida %> </div>
+        <div> <b> Data de Saída: </b> <%= resultado.datasaida %> </div>
+        <div> <b> Horário de Saída: </b> <%= resultado.horasaida %> </div>
+        <div> <b> Destino: </b> <%= resultado.destino %> </div>
+        <div> <b> Data de Pouso: </b> <%= resultado.datapouso %> </div>
+        <div> <b> Horário de Pouso: </b> <%= resultado.horapouso %> </div>
+
+        <div>
+            </br> <a class="btn btn-purple" href="/voo">Voltar</a>
+        </div>
+
+    </div>
+    
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+</html>

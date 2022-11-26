@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Voos</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <table class="table">
+
+            <tr>
+                <th>Número</th>
+                <th>Saída</th>
+                <th>Data de Saída</th>
+                <th>Hora de Saída</th>
+                <th>Destino</th>
+                <th>Data de Pouso</th>
+                <th>Hora de Pouso</th>
+                <th>Avião</th>
+            </tr>
+
+            <% for(let voo of listaVoo) {  %>
+                <tr>
+                    <td>
+                        <%= voo.numero%>
+                    </td>
+                    <td>
+                        <%= voo.saida%>
+                    </td>
+                    <td>
+                        <%= voo.datasaida%>
+                    </td>
+                    <td>
+                        <%= voo.horasaida%>
+                    </td>
+                    <td>
+                        <%= voo.destino%>
+                    </td>
+                    <td>
+                        <%= voo.datapouso%>
+                    </td>
+                    <td>
+                        <%= voo.horapouso%>
+                    </td>
+                    <td>
+                        <%= voo.aviao%>
+                    </td>
+                </tr>
+
+            <% } %>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

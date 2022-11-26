@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Passageiro</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p style="font-size: 25px">Cadastrar Passageiro</p>
+
+        <form action= "/passageiro" method="post">
+
+            <input type="hidden" name="id" value="<%= passageiro.id %>">
+
+            <div <%= escondido %> class="mb-3">
+                <label class="form-label">Código</label>
+                <input required type="text" value="<%= passageiro.codigo %>" required class="form-control" name="codigo">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">CPF</label>
+                <input type="number" value="<%= passageiro.cpf %>" required class="form-control" name="cpf">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" value="<%= passageiro.nome %>" required class="form-control" name="nome">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Data de Nascimento</label>
+                <input type="date" value="<%= passageiro.datanasc %>" required class="form-control" name="datanasc">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="text" value="<%= passageiro.email %>" required class="form-control" name="email">
+            </div>
+
+            <button type="submit" class="btn btn-purple">Salvar</button>
+            <a class="btn btn-purple" href="/">Voltar</a>
+        </form>
+
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+
+</html>

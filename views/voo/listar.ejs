@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voos</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <p style="font-size:40px;">Voos</p>
+
+        <% if (salvo != undefined){ %>
+            <div style="text-align:center; background-color:green; color:white">
+                Voo cadastrado com sucesso!
+            </div>
+        <%}%>
+
+        <% if (atualizado != undefined){ %>
+            <div style="text-align:center; background-color:gold; color:white">
+                Dados atualizados com sucesso!
+            </div>
+        <%}%>
+
+        <% if (removido != undefined){ %>
+            <div style="text-align:center; background-color:brown; color:white">
+                Voo removido com sucesso!
+            </div>
+        <%}%>
+
+        <table class="table">
+
+            <tr>
+                <th>Número</th>
+                <th>Saída</th>
+                <th>Destino</th>
+                <th>Data de Saída</th>
+            </tr>
+
+            <% for(let voo of listaVoo) {  %>
+                <tr>
+                    <td>
+                        <%= voo.numero%>
+                    </td>
+                    <td>
+                        <%= voo.saida%>
+                    </td>
+                    <td>
+                        <%= voo.destino%>
+                    </td>
+                    <td>
+                        <%= voo.datasaida%>
+                    </td>
+                    <td>
+                        <a class="btn btn-purple" href="/voo/<%= voo.numero %>">Detalhes</a>
+                        <a class="btn btn-purple" href="/voo/cadastrar/<%= voo.numero %>">Atualizar</a>
+                        <a class="btn btn-purple" onclick="return confirm('Confirmar remoção?')" href="/voo/remover/<%= voo.numero %>">Remover</a>
+                    </td>
+                </tr>
+
+            <% } %>
+
+        </table>
+
+        <div>
+            <a class="btn btn-purple" href="/voo/cadastrar">Cadastrar</a>
+            <a class="btn btn-purple" href="/" >Voltar</a>
+        </div>
+
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+</html>

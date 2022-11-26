@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/css/bootstrap.css">
+
+<nav class="navbar navbar-expand-lg bg-light">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="#">
+            <img src="https://www.usf.edu.br/vestibular/_assets/img/_icones/5-icone-internacionalizacao.svg" alt="" width="60" height="50">
+        </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuário
+            </a>
+            <ul class="dropdown-menu">
+              <!-- <li><a class="dropdown-item" href="/usuario/cadastrar">Cadastrar</a></li> -->
+              <li><a class="dropdown-item" href="/usuario">Cadastrados</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a target="_blank" class="dropdown-item" href="/usuario/relatorio">Relatório</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <form class="dropdown-item" method= "post" action="/usuario/logout">
+                <button class="btn btn-purple" type="submit">Logout</button>
+              </form>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Passageiro
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/passageiro/cadastrar">Cadastrar</a></li>
+              <li><a class="dropdown-item" href="/passageiro">Cadastrados</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a target="_blank" class="dropdown-item" href="/passageiro/relatorio">Relatório</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Voo
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/voo/cadastrar">Cadastrar</a></li>
+              <li><a class="dropdown-item" href="/voo">Cadastrados</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a target="_blank" class="dropdown-item" href="/voo/relatorio">Relatório</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>

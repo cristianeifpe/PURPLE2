@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passageiros</title>
+    <%- include("../partials/header.ejs") %>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <p style="font-size: 25px">Passageiros</p>
+
+        <% if (salvo != undefined){ %>
+            <div style="text-align:center; background-color:green; color:white">
+                Passageiro cadastrado com sucesso!
+            </div>
+        <%}%>
+
+        <% if (atualizado != undefined){ %>
+            <div style="text-align:center; background-color:gold; color:white">
+                Dados atualizados com sucesso!
+            </div>
+        <%}%>
+
+        <% if (removido != undefined){ %>
+            <div style="text-align:center; background-color:brown; color:white">
+                Passageiro removido com sucesso!
+            </div>
+        <%}%>
+
+        <table class="table">
+
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+            </tr>
+
+            <% for(let passageiro of listaPassageiro) {  %>
+                <tr>
+                    <td>
+                        <%= passageiro.codigo%>
+                    </td>
+                    <td>
+                        <%= passageiro.nome%>
+                    </td>
+                    <td>
+                        <%= passageiro.datanasc%>
+                    </td>
+                    <td>
+                        <a class="btn btn-purple" href="/passageiro/<%= passageiro.codigo %>">Detalhes</a>
+                        <a class="btn btn-purple" href="/passageiro/cadastrar/<%= passageiro.codigo %>">Atualizar</a>
+                        <a class="btn btn-purple" onclick="return confirm('Confirmar remoção?')" href="/passageiro/remover/<%= passageiro.codigo %>">Remover</a>
+                    </td>
+                </tr>
+
+            <% } %>
+
+        </table>
+
+        <div>
+            <a class="btn btn-purple" href="/voo/cadastrar">Cadastrar</a>
+            <a class="btn btn-purple" href="/" >Voltar</a>
+        </div>
+
+    </div>
+
+</body>
+
+<foot>
+    <%- include("../partials/footer.ejs") %>
+</foot>
+
+
+</html>

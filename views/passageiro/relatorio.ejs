@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Passageiros</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <table class="table">
+
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>CPF</th>
+                <th>E-mail</th>
+            </tr>
+
+            <% for(let passageiro of listaPassageiro) {  %>
+                <tr>
+                    <td>
+                        <%= passageiro.codigo%>
+                    </td>
+                    <td>
+                        <%= passageiro.nome%>
+                    </td>
+                    <td>
+                        <%= passageiro.datanasc%>
+                    </td>
+                    <td>
+                        <%= passageiro.cpf%>
+                    </td>
+                    <td>
+                        <%= passageiro.email%>
+                    </td>
+                </tr>
+
+            <% } %>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
